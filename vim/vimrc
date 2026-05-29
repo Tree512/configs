@@ -1,0 +1,63 @@
+filetype on
+filetype plugin on
+filetype indent on
+syntax on
+
+set guicursor=
+set number
+set relativenumber
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+set nowrap
+set linebreak
+set breakindent
+
+set smartindent
+
+set noswapfile
+set nobackup
+set undodir=$HOME/.vim/undodir
+set undofile
+
+set nohlsearch
+set incsearch
+
+" remove anoying delay after quiting  visual mode 
+set timeoutlen=1000 ttimeoutlen=0
+
+colorscheme molokai
+hi MatchParen ctermfg=208 ctermbg=black
+
+
+let mapleader = " "
+
+nnoremap <leader>pv :Ex<CR>
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+xnoremap <leader>p "_dP
+
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+Y
+
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+
+nnoremap <silent> <leader>x :!chmod +x %<CR>
+
+set statusline=
+set statusline+=\ %F\ %M\ %Y\ %R
+set statusline+=%=
+set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+set laststatus=2
